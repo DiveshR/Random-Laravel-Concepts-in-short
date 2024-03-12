@@ -68,7 +68,7 @@ composer update laravel/framework
 ```
 <img width="877" alt="Screenshot 2024-03-12 at 9 47 52 PM" src="https://github.com/DiveshR/Random-Laravel-Concepts-in-short/assets/25860707/5e6fa6d5-c151-4e9c-a5e4-44a4dea22b8c">
 
-### Filtering data in sorter way
+### 3. Filtering data in sorter way
 In Laravel 10.10
 ```
 $search = '%Otwell%';
