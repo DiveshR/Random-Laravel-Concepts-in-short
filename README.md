@@ -68,6 +68,32 @@ composer update laravel/framework
 ```
 <img width="877" alt="Screenshot 2024-03-12 at 9 47 52 PM" src="https://github.com/DiveshR/Random-Laravel-Concepts-in-short/assets/25860707/5e6fa6d5-c151-4e9c-a5e4-44a4dea22b8c">
 
+### Filtering data in sorter way
+In Laravel 10.10
+```
+$search = '%Otwell%';
 
+User::query()
+      ->where(function ($query) use ($search) {
+          $query
+              ->where('first_name', 'LIKE', $search)
+              ->orWhere('last_name', 'LIKE', $search)
+              ->orWhere('email', 'LIKE', $search)
+              ->orWhere('phone', 'LIKE', $search);
+      })
+```
+
+In laravel 10.48
+```
+$search = '%Otwell%';
+
+User::query()
+      ->whereMultiple([
+          'first_name',
+          'last_name',
+          'email',
+          'phone'
+      ], 'LIKE', $search)
+```
 
 
