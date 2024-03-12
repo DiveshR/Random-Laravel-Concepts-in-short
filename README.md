@@ -58,3 +58,11 @@ Create performs individual inserts for each record, which can be less efficient 
 ###### Not Suitable for Bulk Insert:
 
 When dealing with a large number of records, calling create in a loop is not an efficient way to perform a bulk insert.
+
+
+## 2. How to upgrade to latest laravel version.
+To upgrade to latest version --Eg from laravel 10.10 to latest version use composer update command
+
+```
+composer update laravel/framework
+```
