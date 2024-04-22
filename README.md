@@ -96,4 +96,28 @@ User::query()
       ], 'LIKE', $search)
 ```
 
+## 4. Attempt to read property "name" on null - 4 Ways
+#### - Using nullsafeoperator( in PHP8)
+```
+$product->categories?->name
+```
+#### - Using Option() helper
+```
+optional($product->categories)->name
+```
+#### - Adding Default Value instead of null
+```
+$product->categories?? 'No Categories'
+```
+#### - Using Relationship
+```
+public function category()
+{
+    return $this->belongsTo(Category::class)
+        ->withDefault([
+            'name' => 'No Category',
+         ]);
+}
+```
+
 
